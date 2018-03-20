@@ -163,7 +163,8 @@ WooCommerceAPI.prototype._request = function(method, endpoint, data, callback) {
     headers: {
       'User-Agent': 'WooCommerce API Client-Node.js/' + this.classVersion,
       'Accept': 'application/json'
-    }
+    },
+    pool: { maxSockets: 128 }
   };
 
   if (this.isSsl) {
